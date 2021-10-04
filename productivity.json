@@ -41,7 +41,7 @@
       },
   
       "y": {
-        "field": "VARIABLE YOU ARE MEASURING HERE",
+        "field": "newDeaths60DaysByDeathDate",
         "type": "quantitative",
         "title": null,
         "axis": {"grid": false}
