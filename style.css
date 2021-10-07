@@ -2,23 +2,23 @@
 
 body{
 
-    background-color: #122b39 ;
+    background-color: #2BAE66FF ;
     max-width: 450px;
     margin: auto;
 }
 
 h1{
 
-    color: red;
-    font-family: 'Poppins', sans-serif ;
+    color: #FCF6F5FF;
+    font-family: 'Garamond', sans-serif ;
 }
 
 h3{
     color: #f4c245;
-    font-family: 'Poppins', sans-serif ;
+    font-family: 'Garamond', sans-serif ;
 }
 
-p{font-family: 'Poppins', sans-serif;
+p{font-family: 'Garamond', sans-serif;
 color: white;
 }
 
