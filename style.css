@@ -3,8 +3,9 @@
 body{
 
     background-color: #990011FF ;
-    max-width: 450px;
+    max-width: 350px;
     margin: auto;
+    line-height:1.6em;
 }
 
 h1{
