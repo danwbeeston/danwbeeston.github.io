@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+
+</head>
+<body>
+    <header class="main-header">
+      <nav class='nav'>
+        <ul>
+          <li><a href="portfolio.html">PORTFOLIO</a></li>
+        </ul>
+      </nav>
+      <h1>Data Science Workbook</h1>
+      <h2>By Dan Beeston (1914474)</h2>
+    </header>
+  <div class="box-1">
+
+<!-- These first two charts are examples from Lecture 1. There is meant to be a third chart but the code was bugged (it was one provided)
+and I'll be damned if I have a bugged chart in my site -->
+
+</div>
+ 
+<h3>Week 1</h3> 
+<p> This week we embedded two charts from the dropbox. Unfortunately the latter graph is failing to display. The second graph you observe is therefore the homework, which was to embed a graph of our own from the rapidchart.io repository. </p>
+<div class="chart">
+  <div class="charts" id="firstChart">
+      <script>
+        var myChart1 = "chart1_covidUKRegions.json";
+        vegaEmbed('#firstChart', myChart1);
+      </script>
+  </div>
+  <div class="charts" id="secondChart">
+    <script>
+      var myChart1 = "chart2_ukProductivity.json";
+      vegaEmbed('#secondChart', myChart2);
+    </script>
+</div>
+</div>
+
+  <h3> Week 1 Homework</h3>
+
+<div class="chart">
+  
+   <div class="charts" id="thirdChart">
+      <script>
+        var myChart3 = "chart3_Food_CO2_Emissions.json";
+        vegaEmbed('#thirdChart', myChart3);
+      </script>
+      </div>
+</div>
+  
+  <h3>Week 2 </h3> 
+  <p> This week we were asked to embed two charts. The first uses a live API whilst the second uses a csv file stored on github.</p>
+  <div class="chart">
+   <div class="charts" id="fourthChart">
+      <script>
+        var myChart4 = "chart4_60CovidRate.json";
+        vegaEmbed('#fourthChart', myChart4);
+      </script>
+      </div>
+   <div class="charts" id="fifthChart">
+        <script>
+          var myChart5 = "Chart5.json";
+          vegaEmbed('#fifthChart', myChart5);
+        </script>
+   </div>
+  </div>
+
+
+</body>
+</html>
