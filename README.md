@@ -1,1 +1,0 @@
-# danwbeeston.github.io
