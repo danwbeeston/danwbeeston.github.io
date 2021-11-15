@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    </style>
+
+<!--Vega Embed Fetches-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+</head>
+
+ <!-- Navigation Bar and Header-->
+ <header class="main-header">
+  <nav class='nav'>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="project.html">PROJECT</a></li>
+    </ul>
+  </nav>
+  <h1>Data Science Workbook</h1>
+  <h2>By Dan Beeston (1914474)</h2>
+</header>
+
+
+<body>
+<div class ="bodywrap3">
+<div class ="bodywrap2">
+<div class ="bodywrap1">
+
+
+
+   
+  <!-- Week 1's tasks. First two were examples. Third is embedded from rapidchart.io site-->
+ <h2>Week 1</h2>
+
+
+    <h3>Covid-19</h3>
+    <p>My first chart tracks Covid-19 cases by UK region.</p>
+<div class="chart" id="firstChart">
+  <script>
+    var myChart1 = "chart1.json";
+    vegaEmbed('#firstChart', myChart1);
+  </script>
+</div>
+
+
+  <h3>Productivity Puzzle</h3>
+  <p>My second chart looks at productivity in the UK.</p>
+<div class="chart" id="secondChart">
+  <script>
+    var myChart2 = "chart2.json";
+    vegaEmbed('#secondChart', myChart2);
+  </script>
+</div>
+
+
+<h3>Popping Population</h3>
+<p>My third chart looks declinging population projections.</p>
+<div class="chart" id="thirdChart">
+  <script>
+    var myChart3 = "chart3.json";
+    vegaEmbed('#thirdChart', myChart3);
+  </script>
+</div>
+
+<h2> Week 2 </h2>
+
+<h3>Covid Hospitalisations</h3>
+<p>My fourth live API chart looks at hospital admissions per region.</p>
+<div class="chart" id="fourthChart">
+  <script>
+    var myChart4 = "chart4.json";
+    vegaEmbed('#fourthChart', myChart4);
+  </script>
+</div>
+
+<h3>Vantage of Vaccinations</h3>
+<p>My fifth .csv sourced chart looks at new Vaccinations by Region over time.</p>
+<div class="chart" id="fifthChart">
+  <script>
+    var myChart5 = "chart5.json";
+    vegaEmbed('#fifthChart', myChart5);
+  </script>
+</div>
+
+<h2>Week 3</h2>
+
+<h3>Superhero Scores</h3>
+<p>My sixth handmade json file sourced chart looks at a school's vote outcome for favourite superhero.</p>
+<div class="chart" id="sixthChart">
+  <script>
+    var myChart6 = "chart6.json";
+    vegaEmbed('#sixthChart', myChart6);
+  </script>
+</div>
+
+<h3>Carbon Correction</h3>
+<p>My seventh hand-editted chart looks at carbon emissions by source. I have added the true cause of climate change.</p>
+<div class="chart" id="seventhChart">
+  <script>
+    var myChart7 = "chart7.json";
+    vegaEmbed('#seventhChart', myChart7);
+  </script>
+</div>
+
+<h2>Week 8</h2> 
+
+</div>
+</div>
+</div>
+
+
+</body>
+
+
+</html>
