@@ -12,7 +12,7 @@
     "color": "black"
   },
   
-  "data": {"url": "MEGASHEET.csv", "format": {"type": "csv"}},
+  "data": {"url": "Megasheet.csv", "format": {"type": "csv"}},
   "transform": [{"filter": "datum.year==Year"}, {"filter": "datum.DI>minDI"},{"filter": "datum.DI<maxDI"}],
 
   "height": 300,
