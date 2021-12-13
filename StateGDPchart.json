@@ -1,0 +1,79 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+    "description": "Coronavirus cases",
+    "background": null,
+    
+    "data": {
+      "url": "https://api.opendatanetwork.com/data/v1/values?app_token=cQovpGcdUT1CSzgYk0KPYdAI0&describe=true&format=google&variable=economy.gdp.per_capita_gdp_percent_change&entity_id=0400000US48",
+      "format": {"type": "csv"}
+    },
+  
+    "title": {
+      "text": "Covid cases: UK regions",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+  
+  
+  
+    "height": 300,
+    
+    "width": 300,
+    
+    "mark": {"type": "bar", "width":10},
+    
+    "selection": {
+      "Region": {
+        "type": "single",
+        "fields": ["areaName"],
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "East Midlands",
+            "East of England",
+            "London",
+            "North East",
+            "North West",
+            "South East",
+            "South West",
+            "West Midlands",
+            "Yorkshire and The Humber"
+          ],
+          "name": "Region"
+        }
+      }
+    },
+    "transform": [
+      
+      {"filter": {"selection": "Region"}},
+      {
+        "filter": {
+          "field": "date",
+          "range": [
+            {"year": 2020, "month": "dec", "date": 1},
+            {"year": 2050, "month": "dec", "date": 30}
+          ]
+        }
+      }
+    ],
+  
+    "encoding": {
+      "x": {"field": "date", "type": "temporal", "title": null},
+      "y": {
+        "field": "newCasesByPublishDate",
+        "type": "quantitative",
+        "title": null
+      },
+      
+        
+      "color": {
+        "field": "areaName",
+        "type": "nominal",
+        "legend": null,
+        "scale": {"scheme": "browns"}
+      }
+    }
+  }

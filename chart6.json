@@ -1,0 +1,45 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+    "description": "Superhero Votes",
+    "background": null,
+    
+    "data": {
+        "values": [
+            {"Hero": "Batman", "Votes": 50}, {"Hero": "Superman", "Votes": 47}, {"Hero": "Wonder Woman", "Votes": 69}, {"Hero": "The Flash", "Votes": 22}
+          ]
+    },
+  
+
+    "title": {
+      "text": "Survey on Favourite Superheros",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+  
+  
+  
+    "height": 300,
+    
+    "width": 300,
+    
+    "mark": {"type": "bar", "width":20},
+  
+    "encoding": {
+      "x": {"field": "Hero", "type": "nominal", "title": null},
+      "y": {
+        "field": "Votes",
+        "type": "quantitative",
+        "title": null
+      },
+      
+        
+      "color": {
+        "field": "Hero",
+        "type": "nominal",
+        "legend": null,
+        "scale": {"scheme": "browns"}
+      }
+    }
+  }
