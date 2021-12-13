@@ -1,0 +1,65 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+    "description": "Basic 2010 Human Freedom by Country",
+  
+     "title": {
+      "text": "Human Freedom Index against GDP Growth, 2018",
+      "subtitle":"",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+    
+    "height": 300,
+    "width": 345,
+    "data": {"url": "MEGASHEET.csv"},
+
+    "params": [
+      {"name": "minYear", "value": 2008, "bind": {"input": "range", "min": 2008, "max": 2018, "step": 2}},
+      {"name": "maxYear", "value": 2018, "bind": {"input": "range", "min": 2008, "max": 2018, "step": 2}} ],
+  
+      "encoding": {   "x": {
+        "field": "HFI 2018",
+        "type": "quantitative",
+        "scale":{"domain":[4, 10]},
+        "axis": {
+          "title": null,
+          "grid": false,
+          "labelSeparation": 20,
+          "ticks": false
+        }
+      },
+      "y": {
+        "field": "country",
+        "type": "nominal",
+        "title": "",
+        "axis": {"grid": false}
+        
+      }}
+    ,
+    "layer": [
+
+      {"mark": "line",
+        "encoding": { "detail": {"field": "country", "type": "nominal"},"color": {"value": "#db646f"}},
+        "transform": [{"filter": {"field": "POP 2018", "gte" : 126500000}},{"filter": {"or": ["datum.year==minYear", "datum.year==maxYear"]}}]
+          
+          },
+
+
+    {"mark": {"type": "point", "size": 200,"color":"red", "filled": true},
+    "transform": [{"filter": {"field": "POP 2018", "gte" : 126500000}}, {"filter": "datum.year==minYear"}]},
+
+    {"mark": {"type": "point", "color":"blue", "size": 200, "filled": true},
+    "transform": [{"filter": {"field": "POP 2018", "gte" : 126500000}},{"filter": "datum.year==maxYear"}]
+         }
+        
+    ]
+    
+  }
+        
+    
+        
+        
+         

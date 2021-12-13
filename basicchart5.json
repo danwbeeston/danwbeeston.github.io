@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+    "description": "Basic 2018 Human Freedom by Country",
+  
+     "title": {
+      "text": "Human Freedom Index vs Human Happiness Index",
+      "subtitle":"",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+    
+    "data": {"url": "HI2008-2017.csv", "format": {"type": "csv"}},
+    "transform": [{"filter": "datum.year==Year"}],
+  
+    "height": 300,
+    "width": 345,
+  
+    "params": [
+      {"name": "Year", "value": 2016, "bind": {"input": "range", "min": 2008, "max": 2016, "step": 2}}],
+  
+    "layer": [
+    {"mark": {"type": "point", "point": false, "interpolate": "monotone"},
+    "encoding": {}
+    },   
+    {"mark": {"type": "line", "color": "black"}, 
+    "transform": [{"regression": "HFI", "on": "Life Ladder", "method": "linear"}]
+  
+  
+    }],
+  
+  
+    "encoding": {
+      "x": {
+        "field": "Life Ladder",
+        "type": "quantitative",
+        "scale":{"domain":[0, 10]},
+        "axis": {
+          "title": "Happiness",
+          "grid": false,
+          "labelSeparation": 20,
+          "ticks": false
+        }
+      },
+      "y": {
+        "field": "HFI",
+        "type": "quantitative",
+        "title": "Index",
+        "axis": {"grid": false},
+        "scale":{"domain":[3.5, 9.5]}
+      },
+      "tooltip": {"field": "country", "type": "nominal"}
+      
+  
+      
+    
+                   
+    
+    }
+  }
