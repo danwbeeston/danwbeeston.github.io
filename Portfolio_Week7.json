@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "Portfolio_Week7.csv"},
+    "background": null,
+    "mark": {"type":"bar", "color": "darkgreen"},
+    "width": 250,
+    "height": 250,
+
+    "title": {
+      "text": "Visitors to UK by Tourism Market ",
+      "subtitle": "Visitors from 10 most significant tourism markets (2019). Source: Wikipedia ",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"},
+
+    "encoding": {
+        "y": {"field": "Visitors",
+            "type": "quantitative",
+            "axis": {"format":".2s", "title": ""}
+        },
+      "x": {
+        "field": "Market",
+        "title": null,
+        "axis":{},
+        "type": "nominal"
+        
+      }
+      }
+    }

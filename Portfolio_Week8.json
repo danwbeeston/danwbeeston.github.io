@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+    "description": "Unemployment UK",
+    "background": null,
+  
+     "title": {
+      "text": "UK Unemployment Rate, 1760-2021",
+      "subtitle":"Unemployment Rate: Aged 15-64. Source: FRED",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+    
+    "data": {
+      "url": "Portfolio_Week8.csv"},
+    "height": 300,
+    "width": 300,
+    "layer":[{
+      "mark": {
+      "type": "line",
+      "point": false,
+      "interpolate": "monotone",
+      "color": "darkgreen"
+    },
+    "encoding": {
+      "x": {
+        "field": "DATE",
+        "type": "temporal",
+        "axis": {
+          "title": null,
+          "grid": true,
+          "labelSeparation": 20,
+          "ticks": false
+        }
+      },
+      "y": {
+        "field": "LRUN64TTGBQ156S",
+        "type": "quantitative",
+        "title": "",
+        "axis": {"grid": true, "format":""}
+      }
+    }
+  },
+  {"mark": "line", "encoding": {
+    "x": {"field": "DATE", "type": "temporal"},
+    "y": {"value":204}}}
+  
+  ]}

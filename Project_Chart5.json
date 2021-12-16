@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://world-happiness-database.herokuapp.com/api/grouped_data"
+    },
+    "background": null,
+    "mark": "circle",
+    "width": 250,
+    "height": 250,
+    "encoding": {
+        "x": {"field": "gdpPerCap",
+            "type": "quantitative"
+        },
+      "y": {
+        "field": "happiness",
+        "title": null,
+        "type": "quantitative",
+        "scale": {"domain":[3,8]}
+        
+      }
+      }
+    }

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+<!-- Style Sheet, Font and Icon Imports-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Vega Embed Fetches-->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+
+
+    <div class="heading">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div> 
+      </div>
+    
+
+    <section class="header2">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="Portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="Project.html">PROJECT</a></li>
+                    <li><a href="https://github.com/danwbeeston/danwbeeston.github.io">GITHUB</a></li>
+                    <li><a href="https://rapidcharts.io/datascience">COURSE</a></li>
+
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+<div class="text-box">
+    <h1>Daniel Beeston</h1>
+    <p>Portfolio</p>
+    <a href="#intro1" class='here-btn'>Click Here</a>
+
+</div>
+
+    </section>
+
+<!--- Home -->
+
+<!-- Week 1-->
+
+<section class="intro" id="intro1" >
+    <h1>Week 1:</h1>
+    <h2>Building a Site and Embedding Charts</h2>
+    <p> Embed three charts, two that are given to you in class. One
+      (as homework) taken from the repository of charts that drive www.rapidcharts.io</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Given Chart 1</h3>
+
+<!-- Chart 1, -->
+            <div class="chart" id="firstportfolioChart">
+                <script>
+                  var myportfolioChart1 = "Portfolio_Week1_1.json";
+                  vegaEmbed('#firstportfolioChart', myportfolioChart1);
+                </script>
+              </div>
+            
+
+        </div>
+        <div class="intro-col">
+            <h3>Given Chart 2</h3>
+            <div class="chart" id="secondportfolioChart">
+                <script>
+                  var myportfolioChart2 = "Portfolio_Week1_2.json";
+                  vegaEmbed('#secondportfolioChart', myportfolioChart2);
+                </script>
+              </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Homework Chart</h3>
+            <div class="chart" id="thirdportfolioChart">
+                <script>
+                  var myportfolioChart3 = "Portfolio_Week1_3.json";
+                  vegaEmbed('#thirdportfolioChart', myportfolioChart3);
+                </script>
+              </div>
+        </div>
+    </div>
+
+
+    <h1>Week 2:</h1>
+    <h2>Hosting Data</h2>
+    <p>Embed two charts of your own design: (a) from
+      a given
+      API, (b) from the same/related data saved to your Github</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Chart From API</h3>
+            <div class="chart" id="fourthportfolioChart">
+                <script>
+                  var myportfolioChart4 = "Portfolio_Week2_1.json";
+                  vegaEmbed('#fourthportfolioChart', myportfolioChart4);
+                </script>
+              </div>
+            
+            
+
+        </div>
+        <div class="intro-col">
+            <h3>Chart From .CSV</h3>
+            <div class="chart" id="fifthportfolioChart">
+                <script>
+                  var myportfolioChart5 = "Portfolio_Week2_2.json";
+                  vegaEmbed('#fifthportfolioChart', myportfolioChart5);
+                </script>
+              </div>
+            
+        </div>
+    </div>
+   
+    <h1>Week 3:</h1>
+    <h2>Editing Data, Writing JSON by Hand</h2>
+    <p>Two more charts. One where you change the data (add an observation, add a series, create a new series); One where the data is “in-line” JSON that you write. This second chart need only have 5 or so observations</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Altered Observation Chart</h3>
+            <div class="chart" id="sixthportfolioChart">
+                <script>
+                  var myportfolioChart6 = "Portfolio_Week3_1.json";
+                  vegaEmbed('#sixthportfolioChart', myportfolioChart6);
+                </script>
+              </div>
+            
+
+        </div>
+        <div class="intro-col">
+            <h3>Handwritten JSON Chart</h3>
+            <div class="chart" id="seventhportfolioChart">
+                <script>
+                  var myportfolioChart7 = "Portfolio_Week3_2.json";
+                  vegaEmbed('#seventhportfolioChart', myportfolioChart7);
+                </script>
+              </div>
+            
+        </div>
+    </div>
+
+    <h1>Week 4:</h1>
+    <h2>API Driven Charts</h2>
+    <p>Embed two charts of your own design from two separate APIs that you sign up for & gain access to</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>API Chart 1</h3>
+            <div class="chart" id="eightportfolioChart">
+                <script>
+                  var myportfolioChart8 = "Portfolio_Week4_1.json";
+                  vegaEmbed('#eightportfolioChart', myportfolioChart8);
+                </script>
+              </div>
+            
+
+        </div>
+        <div class="intro-col">
+            <h3>API Chart 2</h3>
+            <div class="chart" id="ninthportfolioChart">
+                <script>
+                  var myportfolioChart9 = "Portfolio_Week4_2.json";
+                  vegaEmbed('#ninthportfolioChart', myportfolioChart9);
+                </script>
+              </div>
+            
+        </div>
+    </div>
+
+    <h1>Week 5:</h1>
+    <h2>Loops and APIs</h2>
+    <p>Download code from an API using fetch in Python/Colab and chart this. Use a loop to batch download data.</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Chart 1</h3>
+            <div class="chart" id="tenthportfolioChart">
+                <script>
+                  var myportfolioChart10 = "Portfolio_Week5_1.json";
+                  vegaEmbed('#tenthportfolioChart', myportfolioChart10);
+                </script>
+              </div>
+            
+
+        </div>
+        <div class="intro-col">
+            <h3>Chart 2</h3>
+            <div class="chart" id="eleventhportfolioChart">
+                <script>
+                  var myportfolioChart11 = "Portfolio_Week5_2.json";
+                  vegaEmbed('#eleventhportfolioChart', myportfolioChart11);
+                </script>
+              </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Chart 3</h3>
+            <div class="chart" id="twelthportfolioChart">
+                <script>
+                  var myportfolioChart12 = "Portfolio_Week5_3.json";
+                  vegaEmbed('#twelthportfolioChart', myportfolioChart12);
+                </script>
+              </div>
+            
+
+        </div>
+        <div class="intro-col">
+            <h3>Chart 4</h3>
+            <div class="chart" id="thirteenthportfolioChart">
+                <script>
+                  var myportfolioChart13 = "Portfolio_Week5_4.json";
+                  vegaEmbed('#thirteenthportfolioChart', myportfolioChart13);
+                </script>
+              </div>
+            
+        </div>
+    </div>
+
+    <h1>Week 7:</h1>
+    <h2>Scrapers</h2>
+    <p>Build a scraper in Colab, save and chart the results</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Scraped Chart</h3>
+            <div class="chart" id="fourteenthportfolioChart">
+                <script>
+                  var myportfolioChart14 = "Portfolio_Week7.json";
+                  vegaEmbed('#fourteenthportfolioChart', myportfolioChart14);
+                </script>
+              </div>
+              <p> This chart was scraped from a wikipedia table. The python code for this can be found in the file "Portfolio_Week7_Scraper.ipynb".</p>
+            
+
+        </div>
+    </div>
+
+    <h1>Week 8:</h1>
+    <h2>Data Stories</h2>
+    <p>Attend one (or more) mornings of Talking Economics. After this construct a chart that would (a) support or (b) refute an argument that is made there.</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Chart</h3>
+            <div class="chart" id="fifthteenthportfolioChart">
+                <script>
+                  var myportfolioChart15 = "Portfolio_Week8.json";
+                  vegaEmbed('#fifthteenthportfolioChart', myportfolioChart15);
+                </script>
+              </div>
+              <p>Having attended the Economics Observatory Lectures, Oxford Professor Abi Adams-Prassl mentioned the UK had record high employment in March 2020. This suggests the unemployment rate would have been at a record low at this point. As can be seen, this is generally true from 1975 onwards, however 1973/74 saw lower unemployment rates. </p>
+            
+
+        </div>
+    </div>
+
+    <h1>Week 9:</h1>
+    <h2>Advanced Analytics</h2>
+    <p>Build a chart with data from two separate sources. Plot these data using correlation, regression or some other technique. Build and embed a chart that uses advanced statistical methods, testing causality or distribution.</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Chart</h3>
+            <div class="chart" id="sixteenthportfolioChart">
+              <script>
+                var myportfolioChart16 = "Project_Chart1.json";
+                vegaEmbed('#sixteenthportfolioChart', myportfolioChart16);
+              </script>
+            </div>
+            <p>This chart is an excerpt from my project. It studies the correlation between Freedom and GDP per Capita and uses to Loess regression to create a line of best fit. The benefit of this over the linear regression is it can change across the range, however when there is little data, outliers can drastically effect the average. The size of the circles are reflective of that nation's population.</p>
+            
+
+        </div>
+    </div>
+
+    <h1>Week 10:</h1>
+    <h2>Interactivity</h2>
+    <p>Build and embed two interactive charts</p>
+    <div class="row">
+        <div class="intro-col">
+            <h3>Chart 1</h3>
+            <div class="chart" id="seventeenthportfolioChart">
+              <script>
+                var myportfolioChart17 = "Portfolio_Week10_1.json";
+                vegaEmbed('#seventeenthportfolioChart', myportfolioChart17);
+              </script>
+            </div>
+          
+
+        </div>
+        <div class="intro-col">
+            <h3>Chart 2</h3>
+            <div class="chart" id="eighteenthportfolioChart">
+              <script>
+                var myportfolioChart18 = "Project_Chart3.json";
+                vegaEmbed('#eighteenthportfolioChart', myportfolioChart18);
+              </script>
+            </div>
+            
+            
+            
+
+        </div>
+    </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<!---Footer-->
+
+<section class="footer2">
+    <h1> Thank you for looking at my site! </h1>
+    <a href="" class="here-btn">Back To Top</a>
+
+
+</section>
+
+
+<!--- Javascript for Toggle Menu ------>
+
+<script>
+    var navLinks = document.getElementById("navLinks")
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
+
+<!---Javascript for ScrollBar-->
+<script>
+
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
