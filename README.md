@@ -46,6 +46,7 @@ These had to be cleaned in Excel.
 There were fewer problems in analysis beyond coming to terms with using Vega-lite and nesting layers correctly. 
 These were largely resolved using online tutorials and reading the Vega documentation carefully. 
 However, many initial graphs of this project did not show correlations. These were abandoned or refined as the project when along. 
+Also, there were issues using non-linear regressions on my interactive charts, I instead opted to use a loess regression which better captures the curve of my LoBF. 
 
 
 
