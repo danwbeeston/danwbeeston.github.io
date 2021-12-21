@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <!--Vega Embed Fetches-->
+     <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+ 
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- Progress Bar-->
+
+    <div class="heading">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div> 
+      </div>
+    
+<!-- Header Banner and Navigation Bar-->
+
+    <section class="header3">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="Portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="Project.html">PROJECT</a></li>
+                    <li><a href="https://github.com/danwbeeston/danwbeeston.github.io">GITHUB</a></li>
+                    <li><a href="https://rapidcharts.io/datascience">COURSE</a></li>
+
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+<div class="text-box">
+    <h1>Daniel Beeston</h1>
+    <p>Project</p>
+    <a href="#intro1" class='here-btn'>Click Here</a>
+
+</div>
+
+    </section>
+
+<!--- Project -->
+
+<!-- Data Sources-->
+<!-- GDP Per Capita: https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD-->
+<!-- Populations: https://data.worldbank.org/indicator/SP.POP.TOTL-->
+<!-- Democracy Index: https://en.wikipedia.org/wiki/Democracy_Index-->
+<!-- GDP Growth: https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG-->
+
+<!-- Human Freedom Index: https://www.cato.org/human-freedom-index/2020-->
+<!-- Happiness Index: https://world-happiness-database.herokuapp.com-->
+
+<section class="intro" id="intro2" >
+    <h1>Does Freedom Lead to Growth...and Should We Care?</h1>
+    <div class="row">
+          <p> Project Aim <br><br>
+            It was once a truism in the West that economic advancement naturally led to social liberalization. Poorer nations, once they had amassed wealth, would adopt a style of governance similar to that of western democracy. 
+
+            However, recent statements from the Chinese and Russian authorities claim this truism is false. They believe growth and freedom are not fundamentally linked and that it is possible to have flourishing autocracies. 
+            This project aims to test this and answer: <br> <br>
+            
+            1.	What is the relationship between Growth and Freedom? <br><br>
+            2.	If growth and freedom are not synonymous, which is more important for the happiness of a nation’s citizens?
+            
+            </p>
+    </div>
+
+    <div class="row">
+        <div class="intro-col">
+            <div class="chart" id="firstprojectChart">
+                <script>
+                  var myprojectChart1 = "Project_Chart1.json";
+                  vegaEmbed('#firstprojectChart', myprojectChart1);
+                </script>
+              </div>
+              <p> Source files: Project_Chart1.json, Project_Data_Megasheet.csv</p>
+    
+        </div>
+        <div class="intro-col">
+            <div class="chart" id="secondprojectChart">
+                <script>
+                  var myprojectChart2 = "Project_Chart2.json";
+                  vegaEmbed('#secondprojectChart', myprojectChart2);
+                </script>
+              </div>
+              <p> Source files: Project_Chart2.json, Project_Data_Megasheet.csv</p>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <p> Conclusions (Part 1) <br><br>
+            We can see that there is generally a positive correlation between freedom and GDP per capita up until GDP per capita exceeds $50k, at which point increases in wealth do not seem to impact freedom. The outliers are typically relatively small oil-exporting nations such as the UAE and Qatar. We also see that freedom has a slight negative correlation with GDP growth in 2008 but this trend weakens in 2018. 
+
+            Combining these diagrams, we see that as nations increase their GDP per capita, their freedoms typically increase and their growth rates diminishes until they join the western democracy cluster. China, whilst slightly richer per capita than the trend would predict, is not significantly enough away to suggest the trend has been broken. Whilst Russia is moderately richer than the trend would predict, it is joined by other oil exporters. This evidence supports the original truism that wealth equals freedom, with the caveat ‘unless you have oil’.
+            
+          </p>
+  </div>
+
+
+
+    <div class="row">
+        <div class="intro-col">
+            <div class="chart" id="thirdprojectChart">
+                <script>
+                  var myprojectChart3 = "Project_Chart4.json";
+                  vegaEmbed('#thirdprojectChart', myprojectChart3);
+                </script>
+              </div>
+              <p> Source files: Project_Chart4.json</p>
+    
+        </div>
+        <div class="intro-col">
+            <div class="chart" id="fourthprojectChart">
+                <script>
+                  var myprojectChart4 = "Project_Chart3.json";
+                  vegaEmbed('#fourthprojectChart', myprojectChart4);
+                </script>
+              </div>
+              <p> Source files: Project_Chart3.json, Project_Data_Megasheet.csv</p>
+            
+            
+        </div>
+    </div>
+
+    <div class="row">
+      <p> Conclusions (Part 2) <br><br>
+        An increase in GDP per Capita does lead to an increase in happiness, dramatically at first, however after $50k the trend once again disappears. 
+        However, there are many nations with very similar wealth levels but with drastically different happiness levels, what causes this? 
+        It doesn’t seem to be distribution of wealth (as signified by the Gini-Co-efficient). 
+        But by taking three above-trend, ‘over-happy’ nations and three below-trend, ‘under-happy’ nations we can see how growth and freedom affect happiness. <br><br>
+        The ‘Over-Happy’ nations have typically seen an increase in their freedom over the last decade whilst ‘Under-Happy’ nations have seen a decrease in freedom. 
+        Freedom strongly positively correlates with happiness.
+        Indexed growth since 2000 doesn’t seem to have a correlation. <br><br>
+        We can therefore conclude that GDP per Capita and Freedom are both important to happiness, independently of one another. 
+        
+        </p>
+</div>
+
+    <div class="row">
+        <div class="intro-col">
+            <div class="chart" id="fifthprojectChart">
+                <script>
+                  var myprojectChart5 = "Project_Chart5.json";
+                  vegaEmbed('#fifthprojectChart', myprojectChart5);
+                </script>
+              </div>
+              <p> Source files: Project_Chart5.json, Project_Chart5.csv</p>
+    
+        </div>
+        <div class="intro-col">
+            <div class="chart" id="sixthprojectChart">
+                <script>
+                  var myprojectChart6 = "Project_Chart6.json";
+                  vegaEmbed('#sixthprojectChart', myprojectChart6);
+                </script>
+              </div>
+              <p> Source files: Project_Chart6.json, Project_Chart6.ipynb, Project_Chart6_CostaRica.json, Project_Chart6_Czech.json, Project_Chart6_Finland.json, Project_Chart6_Greece.json, Project_Chart6_Japan.json, Project_Chart6_Turkey.json</p>
+            
+        </div>
+    </div>
+
+    <div class="row">
+      <p> Data Used, How it was Accessed, Including Notes on Automation/Replication <br><br>
+        For gaining data on GDP per Capita, Populations and GDP Growth, I used the trusted FRED and World Bank databases and accessed their json and csv files.
+        A data join was used to compile some of these. 
+        The FRED downloads were originally intended to be APIs but worked more reliable when automatically downloaded periodically using python code (Project Chart 6).
+        For access to the Human Freedom Index, I downloaded csv’s directly from the Cato Institute. 
+        The Democracy Index was scraped from Wikipedia using Colab/Python. 
+        Happiness Data was accessed through an API created by Norman Lo that sources data from the World Happiness Project. 
+        Lo’s project is a frequently updated open-source project which combines happiness, population size, GDP per capita and Gini co-efficients.
+      <br><br>
+        Data Sources:<br>
+        GDP Per Capita: https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD<br>
+        Populations: https://data.worldbank.org/indicator/SP.POP.TOTL<br>
+        Democracy Index: https://en.wikipedia.org/wiki/Democracy_Index<br>
+        GDP Growth: https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG<br>
+        Human Freedom Index https://www.cato.org/human-freedom-index/2020<br>
+        Happiness Index: https://world-happiness-database.herokuapp.com<br>
+        </p>
+</div>
+
+<div class="row">
+<p>
+Challenges in data cleaning and/or analysis, and the tools you used to overcome them; <br><br>
+
+The greatest challenge in data cleaning was compiling the various csv files into the document ‘Project Megasheet Data’.
+This was because many databases use different lists of countries (some including data for sub-regions such as “OECD” “EU”) and 
+countries have different names (e.g. Eswatini vs Swaziland). Time was spent manually aligning country columns before a data join was performed. 
+Between some sets, data joins were beyond my skill due to datasets being in long-form / wide-form in a way that couldn’t be easily converted. 
+These had to be cleaned in Excel. 
+There were fewer problems in analysis beyond coming to terms with using Vega-lite and nesting layers correctly. 
+These were largely resolved using online tutorials and reading the Vega documentation carefully. 
+However, many initial graphs of this project did not show correlations. These were abandoned or refined as the project when along. 
+</p>
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!---Footer-->
+
+<section class="footer3">
+    <h1> Thank you for looking at my site! </h1>
+    <a href="" class="here-btn">Back To Top</a>
+
+
+</section>
+
+
+<!--- Javascript for Toggle Menu ------>
+
+<script>
+    var navLinks = document.getElementById("navLinks")
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
+
+<!---Javascript for ScrollBar-->
+<script>
+
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,125 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "GDP",
+
+    "title": {
+            "text": "Indexed Real GDP",
+            "subtitle":["Base Year = 2000. Source: FRED", "'Under-Happy' Nations = Browns", "'Over-Happy' Nations = Blues"],
+            "subtitleFontStyle":"italic",
+            "subtitleFontSize":10,
+            "anchor": "start",
+            "color": "black" 
+            },
+
+    "height":300,
+    "width":270,
+    "background":null,
+
+    "encoding": {
+            "x": {
+                    "field": "date", 
+                    "type": "temporal", 
+                    "title": null, 
+                    "axis": {"grid": true}
+                },
+            "y": {
+                    "field": "value", 
+                    "type": "quantitative", 
+                    "title": "Index (Base Year 2000 = 100)",  
+                    "scale": {"domain":[65,285]},
+                    "axis": {"grid": false}
+                }
+            },
+
+
+    "layer": [
+
+            {
+            "data": {
+                    "url": "Project_Chart6_Japan.json", 
+                    "format": {"property": "observations", "parse": {"date": "date"}}
+                    },
+           "transform": [{
+                    "calculate": "datum.value/479860.3*100", "as": "value"
+                    }],
+            "mark": {
+                    "type":"line", 
+                    "color":"#680202"
+                },
+            "title": "Japan"
+            },
+
+           {
+            "data": {
+                    "url": "Project_Chart6_Turkey.json",
+                    "format": {"property": "observations", "parse": {"date": "date"}}
+                     },
+           "transform": [{
+                   "calculate": "datum.value/191654.76481842*100", "as": "value"
+                    }],
+           "mark": {
+                   "type":"line", 
+                   "color":"#632603"
+                   }
+            },
+
+         {
+            "data": {
+                    "url": "Project_Chart6_Greece.json",
+                    "format": {"property": "observations", "parse": {"date": "date"}}
+                    },
+            "transform": [{
+                    "calculate": "datum.value/51125.2*100", 
+                    "as": "value"
+                    }],
+             "mark": {
+                     "type":"line", 
+                     "color":"#885407"
+                     }
+          },
+
+          {
+             "data": {
+                     "url": "Project_Chart6_Finland.json", 
+                     "format": {"property": "observations", "parse": {"date": "date"}}
+                     },
+              "transform": [{
+                      "calculate": "datum.value/38840.5*100", 
+                      "as": "value"
+                      }],
+              "mark": {
+                      "type":"line", 
+                      "color":"blue"}
+                      },
+
+        {
+              "data": {
+                        "url": "Project_Chart6_CostaRica.json",
+                        "format": {"property": "observations", "parse": {"date": "date"}}
+                        },
+              "transform": [{
+                      "calculate": "datum.value/45352.44921875*100", 
+                      "as": "value"
+                      }],
+               "mark": {
+                       "type":"line", 
+                       "color":"darkblue"}
+                },
+
+        {
+                "data": {
+                        "url": "Project_Chart6_Czech.json",
+                        "format": {"property": "observations","parse": {"date": "date"}}
+                        },
+                "transform": [{
+                        "calculate": "datum.value/718301.5*100", 
+                        "as": "value"
+                        }],
+                "mark": {
+                        "type":"line", 
+                        "color":"lightblue"}
+                }
+          
+        ]
+    }
+  

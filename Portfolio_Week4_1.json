@@ -1,0 +1,38 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+  "description": "IBM Stock Price",
+  "background": null,
+  "data": { 
+      "url": "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&outputsize=full&apikey=SVTEL0YCMKWAXT77&datatype=csv"
+  ,
+    "format": {"type": "csv"}
+  },
+    
+"height": 300,   
+"width": 250,
+
+"title": {
+    "text": "IBM Stock Price",
+    "subtitle":"Daily price at close. Source: Alphavantage", 
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+    
+"mark": {"type": "line", "width":2, "color": "darkgreen"},
+
+"encoding": {
+    "x": {"field": "timestamp", "type": "temporal", "title": null},
+    "y": {
+      "field": "close",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"title": "US Dollars / $"}
+    }
+  }
+
+
+
+
+}

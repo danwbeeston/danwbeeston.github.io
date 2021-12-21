@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "Portfolio_Week5_CLVMNACSCAB1GQIT.json", "format": {"property": "observations"}
+    },
+    "background": null,
+    "mark": "line",
+    "width": 250,
+    "height": 250,
+
+    "title": {
+      "text": "Italy Real GDP ",
+      "subtitle": "Million of Chained 2010 Euros. Seasonally Adjusted. Source: FRED ",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"},
+
+    "encoding": {
+
+        "y": {"field": "value",
+            "type": "quantitative",
+            "scale":{"domain":[300000,450000]},
+            "axis": {"format":".2s", "title": "Euros / €"}
+            },
+
+        "x": {
+          "field": "date",
+          "title": null,
+          "type": "temporal"
+             },
+
+        "color": {
+          "field": "a",
+          "type": "nominal",
+          "legend": null,
+          "scale": {"scheme": "darkgreen"}
+            }
+      }
+    }
+  

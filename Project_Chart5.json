@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "Project_Chart5.csv"
+  },
+
+  "width": 290,
+  "height": 300,
+
+  "title": {
+    "text": "Happiness against Freedom",
+    "subtitle":["Happiness Index 2020. Source: World Happiness Report 2021",
+                "Human Freedom Index 2018. Source: Cato Institute."],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+
+
+  "background": null,
+  "layer": [
+      {"mark": {
+          "type": "circle", 
+          "color": "black"
+              }
+      },  
+      {"mark": {
+          "type": "line", 
+          "color": "blue"
+              }, 
+        "transform": [{
+          "regression": "Happiness", 
+          "on": "Freedom", 
+          "method": "linear"}]
+      }
+        ],
+
+  "encoding": {
+      "x": {"field": "Freedom",
+          "type": "quantitative",
+          "scale": {"domain":[4,9]},
+          "axis": {"title": "Freedom Index", "format": ".2s"}}
+      ,
+    "y": {
+      "field": "Happiness",
+      "title": null,
+      "scale": {"domain":[3,8]},
+      "type": "quantitative",
+      "axis": {"title": "Happiness Index"}
+      
+    },
+    "tooltip": [{"field": "Country name", "type": "nominal", "title": "Country"}]
+  
+  }
+  }

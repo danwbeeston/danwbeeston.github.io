@@ -1,0 +1,118 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+  "description": "Basic 2018 Human Freedom by Country",
+
+   "title": {
+    "text": "Freedom against GDP per Capita",
+    "subtitle":["GDP per capita, PPP (constant 2017 international $). Source: World Bank.",
+                "Human Freedom Index. Source: Cato Institute.",
+              "National Populations (2018). Source: World Bank.",
+            "Democracy Index (2018). Source: Wikipedia"],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+  
+  "data": {"url": "Project_Data_Megasheet.csv", "format": {"type": "csv"}},
+  "transform": [{"filter": "datum.year==Year"}, {"filter": "datum.DI>minDI"},{"filter": "datum.DI<maxDI"}],
+
+  "height": 300,
+  "width": 290,
+  "background": null,
+
+  "params": [
+      {"name": "Year", 
+        "value": 2018, 
+        "bind": {
+            "input": "range", 
+            "min": 2008, 
+            "max": 2018, 
+            "step": 2}
+      },
+      {"name": "minDI", 
+        "value": 0, 
+        "bind": {
+            "input": "range", 
+            "min": 0, 
+            "max": 10, 
+            "step": 0.1
+            }
+      },
+      {"name": "maxDI", 
+        "value": 10, 
+        "bind": {
+          "input": "range", 
+          "min": 0, 
+          "max": 10, 
+          "step": 0.1}
+      } 
+          ],
+
+  "layer": [
+      {"mark": {
+          "type": "point", 
+          "point": false, 
+          "interpolate": "monotone"
+              },
+      "encoding": {
+          "color": {
+                "field": "DI", 
+                "legend": {
+                      "direction": "horizontal", 
+                      "orient": "bottom-right", 
+                      "title": "Democracy Index"
+                          },
+                "type": "quantitative", 
+                "scale": {
+                      "domain": [10,0], 
+                      "scheme":"turbo"}
+                   }
+                  }
+        },   
+
+      {"mark": {
+          "type": "line", 
+          "color": "black"
+              }, 
+      "transform": [{
+          "loess": "HFI 2018", 
+          "on": "GDP-PPP-PC 2018", 
+          "method": "linear"
+                }]
+          }],
+
+
+  "encoding": {
+    "x": {
+      "field": "GDP-PPP-PC 2018",
+      "type": "quantitative",
+      "scale":{"domain":[0, 100000]},
+      "axis": {
+        "title": "GDP per Capita ($)",
+        "grid": true,
+        "format": ".2s",
+        "labelSeparation": 0,
+        "ticks": false
+      }
+    },
+    "y": {
+      "field": "HFI 2018",
+      "type": "quantitative",
+      "title": "Freedom Index",
+      "axis": {"grid": false},
+      "scale":{"domain":[3.5, 9.5]}
+    },
+    "tooltip": [{"field": "country", "type": "nominal", "title": "Country"}, 
+      {"field": "POP 2018", "type": "quantitative", "title": "Population (2018)"},
+      {"field": "DI", "type": "quantitative", "title": "Democracy Index"},
+      {"field": "GDP-PPP-PC 2018", "type": "quantitative", "title": "GDP Per Capita"},
+      {"field": "HFI 2018", "type": "quantitative", "title": "Freedom Index"}],
+    "size": {
+      "field": "POP 2018", 
+      "type": "quantitative",
+      "legend": null}
+
+  }
+}

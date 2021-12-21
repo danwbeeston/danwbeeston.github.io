@@ -1,0 +1,59 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+    "description": "Superhero Votes",
+    "background": null,
+    
+    "data": {
+        "values": [
+          {"Hero": "Nightwing", "Votes": 900}, 
+          {"Hero": "Red Robin", "Votes": 400},
+          {"Hero": "Supergirl", "Votes": 400},
+          {"Hero": "Batman", "Votes": 1000}, 
+          {"Hero": "Aquaman", "Votes": 120}, 
+          {"Hero": "Superman", "Votes": 470}, 
+          {"Hero": "Wonder Woman", "Votes": 690}, 
+          {"Hero": "The Flash", "Votes": 220}
+          ]
+    },
+  
+
+    "title": {
+      "text": "Favourite DC Superhero Poll",
+      "subtitle": "Votes per hero, source: My Imagination ",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+  
+  
+  
+    "height": 300,
+    
+    "width": 250,
+    
+    "mark": {"type": "bar"},
+  
+    "encoding": {
+      
+      "y": {
+        "field": "Hero", 
+        "sort": "-x", 
+        "type": "ordinal", 
+        "title": null
+      },
+      "x": {
+        "field": "Votes",
+        "type": "quantitative",
+        "title": null
+      },
+      
+        
+      "color": {
+        "field": "Hero",
+        "type": "nominal",
+        "legend": null,
+        "scale": {"scheme": "darkgreen"}
+      }
+    }
+  }

@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://world-happiness-database.herokuapp.com/api/grouped_data"
+    },
+
+
+    "title": {
+      "text": "Happiness against GDP per Capita",
+      "subtitle":["Happiness Index 2020. Source: World Happiness Report 2021", "GDP per Capita, PPP(constant 2017 international $). Source: World Bank"],
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+    "background": null,
+    "width": 290,
+    "height": 300,
+
+
+    "layer": [{
+        "mark": {"type":"point"}, 
+        "encoding": {
+            "color": {
+                    "field": "gini", 
+                    "type": "quantitative", 
+                    "scale": {"scheme": "inferno"},
+                    "legend": {"orient": "bottom-right", "title": "Gini-Coefficient"}
+                    }
+                    }
+                  }, 
+        {
+        "mark": {
+            "type": "line", 
+            "color": "black"
+              }, 
+        "transform": [{
+              "loess": "happiness", 
+              "on": "gdpPerCap", 
+              "method": "linear"
+              }]
+        }],
+ 
+    "encoding": {
+        "x": {
+            "field": "gdpPerCap",
+            "type": "quantitative",
+            "axis": {
+                "title": "GDP per Capita ($)", 
+                "format": ".2s"
+              }
+              },
+        "y": {
+            "field": "happiness",
+            "title": null,
+            "type": "quantitative",
+            "scale": {"domain":[3,8]},
+            "axis": {"title": "Happiness Index"}
+            },
+        "size": {
+            "field": "population", 
+            "type": "quantitative", 
+            "legend": null},
+
+        "tooltip": {
+            "field": "country", 
+            "type": "nominal", 
+            "title": "Country"}
+      }
+    }
